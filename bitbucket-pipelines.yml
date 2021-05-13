@@ -20,7 +20,7 @@ pipelines:
           - npm run lint
           - npm run prod
           - ln -f -s .env.pipelines .env
-          - php artisan migrate
+          - php artisan migrate --force
           - php artisan serve &
           - sleep 5
           - ./vendor/bin/phpunit
@@ -33,7 +33,7 @@ definitions:
     mysql:
       image: mysql:5.7
       environment:
-        MYSQL_DATABASE: "homestead"
-        MYSQL_RANDOM_ROOT_PASSWORD: "yes"
-        MYSQL_USER: "homestead"
-        MYSQL_PASSWORD: "secret"
+        MYSQL_DATABASE: 'homestead'
+        MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+        MYSQL_USER: 'homestead'
+        MYSQL_PASSWORD: 'secret'

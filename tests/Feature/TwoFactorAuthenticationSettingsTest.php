@@ -36,7 +36,10 @@ class TwoFactorAuthenticationSettingsTest extends TestCase
         $this->post('/user/two-factor-recovery-codes');
 
         $this->assertCount(8, $user->recoveryCodes());
-        $this->assertCount(8, array_diff($user->recoveryCodes(), $user->fresh()->recoveryCodes()));
+        $this->assertCount(
+            8,
+            array_diff($user->recoveryCodes(), $user->fresh()->recoveryCodes())
+        );
     }
 
     public function test_two_factor_authentication_can_be_disabled()

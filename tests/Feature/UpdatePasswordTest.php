@@ -21,7 +21,9 @@ class UpdatePasswordTest extends TestCase
             'password_confirmation' => 'new-password',
         ]);
 
-        $this->assertTrue(Hash::check('new-password', $user->fresh()->password));
+        $this->assertTrue(
+            Hash::check('new-password', $user->fresh()->password)
+        );
     }
 
     public function test_current_password_must_be_correct()

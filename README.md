@@ -18,13 +18,33 @@ open http://localhost:8025      # Mailhog
 
 ```
 
-# Creating a Pull Request
+# Contributing
+
+## Creating your branch and placeholder PR
 
 - Branch off `master`
 - Push your branch immediately (with no changes)
 - Create a PR with `[Draft]` as the title prefix
 - Verify CI passes
-- Make changes to your local branch and push changes
+
+## Working with your branch
+
+- Make changes to your local branch
 - `npm run lint` should run as a pre-commit hook by Husky, but you can run it manually to check
-- When you push, CI will attempt to install and build everything and run `npm run lint` again
-- PRs will not be looked at or reviewed if CI is failing
+- Push changes to your remote branch as often as you like
+
+## Finalizing your PR
+
+- Verify that your branch has the latest `master` commits
+- Verify that your branch has no conflicts with `master`
+- Verify CI passes
+- Remove the `[Draft]` label
+
+## PR Rules
+
+We will only look at the content of your branch:
+
+- CI is passing
+- There are no merge conflicts with `master`
+- Latest `master` has been merged in
+- The branch is free of unnecessary file changes (whitespace modifications, etc)

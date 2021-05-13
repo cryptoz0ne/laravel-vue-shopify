@@ -20,4 +20,11 @@ open http://localhost:8025      # Mailhog
 
 # Creating a Pull Request
 
-`npm run lint` should run as a pre-commit hook. If you create a PR, CI will attempt to install and build everything and run `npm run lint` again. PRs will not be looked at or reviewed if CI is failing.
+- Branch off `master`
+- Push your branch immediately (with no changes)
+- Create a PR with `[Draft]` as the title prefix
+- Verify CI passes
+- Make changes to your local branch and push changes
+- `npm run lint` should run as a pre-commit hook by Husky, but you can run it manually to check
+- When you push, CI will attempt to install and build everything and run `npm run lint` again
+- PRs will not be looked at or reviewed if CI is failing

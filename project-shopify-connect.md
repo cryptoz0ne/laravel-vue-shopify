@@ -6,9 +6,10 @@ The new feature you’ll be working on is Shopify integration. Please spend as m
 
 ## Goals
 
-1. Allow an authenticated user to connect to his Shopify account
+1. Allow an authenticated user to connect to his Shopify account via oAuth
+   1. https://shopify.dev/tutorials/authenticate-with-oauth
    1. Store the user’s Shopify oAuth credential in the database into `user_extra.shopify_token` using a new Laravel migration
-   2. You will need to create a Shopfiy account with some demo producs so you can link to it. There may be a 'sample shop' feature that comes with proucts already preloaded.
+   1. You will need to create a Shopfiy account with some demo producs so you can link to it. There may be a 'sample shop' feature that comes with proucts already preloaded.
 2. Create a new page at `/products` that lists the user’s Shopify products for sale.
    - Load current stores via an XHR request Laravel, which in turn calls the Shopify API with the user’s oAuth credentials.
    - Bonus if you can include pictures.

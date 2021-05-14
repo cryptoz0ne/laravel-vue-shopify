@@ -4,6 +4,10 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+use App\Http\Controllers\ShopifyController;
+Use App\Http\Controllers\UserController;
+Use App\Http\Controllers\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,7 +33,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
-    Route::get('/products', function () {
-        return Inertia::render('Products');
-    })->name('products');
+    Route::get('/profile', [UserController::class, 'show'])->name('profile');
+    Route::get('/products', [ProductController::class, 'index'])->name('products');
 });

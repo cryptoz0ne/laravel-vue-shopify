@@ -9,6 +9,10 @@
                 Products
             </inertia-link>
 
+            <inertia-link v-if="$page.props.user" href="/products" class="text-sm text-gray-700 underline">
+                Products
+            </inertia-link>
+
             <template v-else>
                 <inertia-link :href="route('login')" class="text-sm text-gray-700 underline">
                     Log in

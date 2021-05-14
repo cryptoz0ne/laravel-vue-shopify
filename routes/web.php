@@ -35,4 +35,10 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::get('/profile', [UserController::class, 'show'])->name('profile');
     Route::get('/products', [ProductController::class, 'index'])->name('products');
+
+    Route::prefix('/shopify')->group(function() {
+        Route::get('/connect', [ShopifyController::class, 'connect'])->name('shopify-connect');
+        Route::get('/disconnect', [ShopifyController::class, 'disconnect'])->name('shopify-disconnect');
+        Route::get('/redirect', [ShopifyController::class, 'confirm'])->name('shopify-confirm');
+    });
 });
